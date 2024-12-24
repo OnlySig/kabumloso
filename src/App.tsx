@@ -1,9 +1,8 @@
-function App() {
-  return (
-    <div>
-      <p className="text-red-500 text-center">test legal</p>
-    </div>
-  );
-}
+import { RouterProvider } from "react-router-dom";
+import { routes } from "./routes/router";
+
+const App = () => {
+  return <RouterProvider router={routes} />;
+};
 
 export default App;
