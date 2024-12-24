@@ -1,0 +1,94 @@
+{
+  "produtos": [
+    {
+      "nome": "Smartphone XYZ",
+      "preco": 2599.99,
+      "categoria": "Eletrônicos",
+      "quantidade": 15,
+      "descricao": "Smartphone com tela de 6.5 polegadas, 128GB de armazenamento e câmera tripla.",
+      "imagem": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-a556ezklzto/gallery/br-galaxy-a55-5g-sm-a556-sm-a556ezklzto-thumb-540317360?$264_264_PNG$",
+      "slug": "smartphone-xyz"
+    },
+    {
+      "nome": "Notebook Ultra",
+      "preco": 4999.99,
+      "categoria": "Informática",
+      "quantidade": 10,
+      "descricao": "Notebook com processador Intel i7, 16GB RAM e SSD de 512GB.",
+      "imagem": "https://www.meupositivo.com.br/uploads/images/linhas/empresas/notebook/N1240/N1240_W10Pro.png",
+      "slug": "notebook-ultra"
+    },
+    {
+      "nome": "Fone de Ouvido Bluetooth",
+      "preco": 399.99,
+      "categoria": "Acessórios",
+      "quantidade": 50,
+      "descricao": "Fone de ouvido sem fio com cancelamento de ruído e bateria de longa duração.",
+      "imagem": "https://brmotorolanew.vtexassets.com/arquivos/motoBuds065.png",
+      "slug": "fone-de-ouvido-bluetooth"
+    },
+    {
+      "nome": "Smart TV 4K",
+      "preco": 3299.99,
+      "categoria": "Eletrônicos",
+      "quantidade": 8,
+      "descricao": "Televisão 50 polegadas com resolução 4K UHD e sistema operacional inteligente.",
+      "imagem": "https://images.samsung.com/is/image/samsung/p6pim/br/un43du7700gxzd/gallery/br-crystal-uhd-du7000-un43du7700gxzd-541780478?$684_547_PNG$",
+      "slug": "smart-tv-4k"
+    },
+    {
+      "nome": "Cafeteira Elétrica",
+      "preco": 199.99,
+      "categoria": "Eletrodomésticos",
+      "quantidade": 20,
+      "descricao": "Cafeteira com design compacto e preparação rápida de café.",
+      "imagem": "https://images.kabum.com.br/produtos/fotos/sync_mirakl/206206/Cafeteira-Eletrica-15-Xicaras-Preta-CAF100-127v_1714154311_g.jpg",
+      "slug": "cafeteira-eletrica"
+    },
+    {
+      "nome": "Relógio Smartwatch",
+      "preco": 999.99,
+      "categoria": "Acessórios",
+      "quantidade": 30,
+      "descricao": "Relógio inteligente com monitoramento de saúde e notificações.",
+      "imagem": "https://images.samsung.com/is/image/samsung/p6pim/br/2407/gallery/br-galaxy-watch7-l315-sm-l315fzgazto-thumb-542363740",
+      "slug": "relogio-smartwatch"
+    },
+    {
+      "nome": "Geladeira Frost Free",
+      "preco": 5999.99,
+      "categoria": "Eletrodomésticos",
+      "quantidade": 5,
+      "descricao": "Geladeira com capacidade de 400L, frost free e econômica.",
+      "imagem": "https://cdn.leroymerlin.com.br/products/geladeira_brastemp_frost_free_french_door_a____554_litros_cor_1570592434_f18b_600x600.png",
+      "slug": "geladeira-frost-free"
+    },
+    {
+      "nome": "Ventilador de Mesa",
+      "preco": 129.99,
+      "categoria": "Utilidades Domésticas",
+      "quantidade": 25,
+      "descricao": "Ventilador compacto e silencioso com três velocidades.",
+      "imagem": "https://paginadeproduto.emondial.com/HTML-VSP-40-B/images/produto-medidas-vsp40b.png",
+      "slug": "ventilador-de-mesa"
+    },
+    {
+      "nome": "Camera DSLR",
+      "preco": 2799.99,
+      "categoria": "Eletrônicos",
+      "quantidade": 12,
+      "descricao": "Câmera DSLR com sensor de 24MP, lente intercambiável e gravação em Full HD.",
+      "imagem": "https://www.nikon.pt/globalassets/digizuite/118404-en-d850_24_70e_front.png/OptimizelyPhoneWebP",
+      "slug": "camera-dslr"
+    },
+    {
+      "nome": "Livro de Ficção",
+      "preco": 49.99,
+      "categoria": "Livros",
+      "quantidade": 100,
+      "descricao": "Livro de ficção com história envolvente e personagens cativantes.",
+      "imagem": "https://www.comix.com.br/media/catalog/product/cache/10252bb74c3c8db84130a54eefb75975/d/u/dunacapanova.png",
+      "slug": "livro-de-ficcao"
+    }
+  ]
+}

@@ -14,7 +14,7 @@ const NavBar = () => {
     document.body.className = theme ? "dark" : "light";
   }, [theme]);
   return (
-    <div className="flex justify-between px-5">
+    <div className="flex justify-between px-5 items-baseline">
       <h1>Kabumloso</h1>
       <button onClick={updateTheme}>
         {theme ? (
