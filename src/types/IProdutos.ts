@@ -3,8 +3,8 @@ export interface IProdutos {
   nome: string;
   preco: number;
   categoria: string;
-  quantidade: string;
-  destricao: string;
+  quantidade: number;
+  descricao: string;
   imagem: string;
   slug: string;
 }
