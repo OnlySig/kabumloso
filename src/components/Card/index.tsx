@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import useCarrinhoContext from "../../hooks/useCarrinhoContext";
+import { IProdutos } from "../../types/IProdutos";
 
 type IProps = {
   imagem: string;
@@ -38,12 +39,19 @@ const Card = ({
       id,
     });
   };
+  const handleQtdClick = (
+    value: IProdutos,
+    e: React.MouseEvent<HTMLSpanElement, MouseEvent>
+  ) => {
+    const opcao = (e.target as HTMLInputElement).textContent ?? "";
+    updateFieldCarrinho(value, opcao);
+  };
   return (
     <li
       className={`${
         inCard
-          ? "flex items-center mb-4"
-          : "flex flex-col flex-grow text-center rounded p-2 border items-center"
+          ? "flex items-center mb-4 bg-white"
+          : "flex flex-col text-center rounded p-2 border items-center w-[220px] bg-white shadow-2xl mb-5"
       }`}
     >
       <Link
@@ -59,7 +67,10 @@ const Card = ({
           <div className={`${inCard && "flex flex-col"}`}>
             <div>
               <h3 className="max-w-32 m-auto">{nome}</h3>
-              R$<span>{(preco * quantidade).toFixed(1)}</span>
+              R$
+              <span>
+                {inCard ? (preco * quantidade).toFixed(1) : preco.toFixed(1)}
+              </span>
             </div>
           </div>
         </div>
@@ -68,14 +79,42 @@ const Card = ({
         <div className="text-xl flex gap-3">
           <span
             className="text-[30px] cursor-pointer"
-            onClick={() => alert("fica pra dps")}
+            onClick={(e) =>
+              handleQtdClick(
+                {
+                  imagem,
+                  nome,
+                  preco,
+                  slug,
+                  categoria,
+                  descricao,
+                  quantidade,
+                  id,
+                },
+                e
+              )
+            }
           >
             -
           </span>
           <span>{quantidade}</span>
           <span
             className="cursor-pointer"
-            onClick={() => alert("fica pra dps")}
+            onClick={(e) =>
+              handleQtdClick(
+                {
+                  imagem,
+                  nome,
+                  preco,
+                  slug,
+                  categoria,
+                  descricao,
+                  quantidade,
+                  id,
+                },
+                e
+              )
+            }
           >
             +
           </span>

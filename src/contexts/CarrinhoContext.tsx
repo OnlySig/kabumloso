@@ -8,7 +8,7 @@ type typeCarrinhoContext = {
   initialState: ICarrinhoContext;
   carrinhoAside: boolean;
   updateToggleAside: (value: boolean) => void;
-  updateFieldCarrinho: (value: IProdutos) => void;
+  updateFieldCarrinho: (value: IProdutos, option?: string) => void;
   setCarrinho: React.Dispatch<React.SetStateAction<IProdutos[]>>;
   carrinho: IProdutos[];
 };
@@ -41,15 +41,15 @@ export const CarrinhoContextProvider = ({
   };
   const { mutate: updateCarrinho } = useUpdateCarrinhoMutation();
 
-  const updateFieldCarrinho = async (value: IProdutos) => {
+  const updateFieldCarrinho = async (value: IProdutos, option?: string) => {
     try {
-      const { data: carrinho } = await http.get("carrinho");
-      const findProduto = carrinho.find(
+      const { data: carrinhoApiData } = await http.get("carrinho");
+      const findProduto = carrinhoApiData.find(
         (produto: IProdutos) => produto.id === value.id
       );
-      updateCarrinho({ value, findProduto });
+      updateCarrinho({ value, findProduto, option });
     } catch (error) {
-      console.error(error.message);
+      console.error((error as Error).message);
     }
   };
   const context = {

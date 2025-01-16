@@ -1,19 +1,25 @@
 import Aside from "../../components/Aside";
 import Card from "../../components/Card";
+import TitleIcon from "../../components/TitleWithIcon";
 import useProdutos from "../../hooks/useProdutos";
-import useToggleThemeContext from "../../hooks/useToggleThemeContext";
+import { IoMdStar } from "react-icons/io";
+
+const iconProps = {
+  fontSize: "30px",
+  color: "#252043",
+};
 
 const Home = () => {
   const { data: produtos, isLoading } = useProdutos();
-  const { theme } = useToggleThemeContext();
-  console.log(theme);
   return isLoading ? (
     "carregando..."
   ) : (
     <>
       <section className="p-10 mt-5">
-        <h2 className="text-2xl mb-2">Produtos em destaque!</h2>
-        <ul className="rounded-lg p-2 flex flex-wrap gap-2 ">
+        <TitleIcon title="Produtos recomendados">
+          <IoMdStar style={iconProps} />
+        </TitleIcon>
+        <ul className="rounded-lg p-2 grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-7 justify-items-center">
           {produtos?.map((produto, index) => (
             <Card {...produto} key={index} />
           ))}

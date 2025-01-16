@@ -6,12 +6,12 @@ import { IProdutos } from "../../types/IProdutos";
 
 const Aside = () => {
   const { carrinhoAside, updateToggleAside } = useCarrinhoContext();
-  const { data: carrinho, error, isLoading } = useCarrinho();
+  const { data: carrinho, isLoading } = useCarrinho();
   return isLoading ? (
     "...carregando"
   ) : (
     <aside
-      className={`fixed right-0 top-0 bottom-0 bg-black h-full w-96 overflow-auto ease-in duration-300 p-2 ${
+      className={`fixed right-0 top-0 bottom-0 bg-backgroundcolor shadow-2xl h-full w-96 overflow-auto ease-in duration-300 p-2 ${
         !carrinhoAside && "translate-x-full"
       }`}
     >

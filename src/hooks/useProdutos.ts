@@ -3,8 +3,8 @@ import { http } from "../http";
 import { IProdutos } from "../types/IProdutos";
 
 const getProtudos = async (): Promise<IProdutos[]> => {
-  const { data } = await http.get("produtos");
-  return data;
+  const { data } = await http.get("produtos?_page=1&_per_page=10"); //? primeiros 10 produtos
+  return data.data;
 };
 
 const useProdutos = () => {
@@ -12,7 +12,6 @@ const useProdutos = () => {
     queryKey: ["produtos"],
     queryFn: () => getProtudos(),
   });
-
   return {
     data,
     isLoading,

@@ -20,7 +20,7 @@
 }
 
 h1 {
-  font-size: 3.2em;
+  font-size: 2.3em;
   line-height: 1.1;
 }
 h2 {
@@ -32,7 +32,7 @@ body {
 
 body.light {
   color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+  background-color: #e6e5ef;
 }
 
 body.dark {
