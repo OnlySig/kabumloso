@@ -6,7 +6,7 @@ import Spinner from "../../components/Spinner";
 
 const Product = () => {
   const { slug } = useParams();
-  const { data, error, isLoading } = useUmProduto(slug ?? "smartphone-xyz");
+  const { data, isLoading } = useUmProduto(slug ?? "smartphone-xyz");
   return isLoading ? (
     <Spinner />
   ) : (

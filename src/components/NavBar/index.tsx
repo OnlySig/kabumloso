@@ -19,7 +19,7 @@ const NavBar = () => {
     document.body.className = theme ? "dark" : "light";
   }, [theme]);
   return (
-    <nav className="flex items-center justify-between px-10 bg-primarycolor500 py-8">
+    <nav className="flex items-center justify-between px-10 2xl:px-0 bg-primarycolor500 py-8 max-w-[1490px] mx-auto mb-10">
       <Link to={"/"}>
         <h1 className="text-white">Kabumloso</h1>
       </Link>

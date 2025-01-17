@@ -9,11 +9,14 @@ export const useUpdateCarrinhoMutation = () => {
       value,
       findProduto,
       option,
+      onlyDelete,
     }: {
       value: IProdutos;
       findProduto: IProdutos;
       option?: string;
+      onlyDelete?: boolean;
     }) => {
+      if (onlyDelete) return await http.delete(`carrinho/${value.id}`);
       const opcao = option;
       if (findProduto && opcao) {
         const novaQuantidade =

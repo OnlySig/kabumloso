@@ -4,8 +4,12 @@ import NavBar from "../components/NavBar";
 const layoutBase = () => {
   return (
     <>
-      <NavBar />
-      <Outlet />
+      <div className="bg-primarycolor500">
+        <NavBar />
+      </div>
+      <section className="max-w-[1490px] mx-auto">
+        <Outlet />
+      </section>
     </>
   );
 };

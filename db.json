@@ -93,7 +93,7 @@
     {
       "nome": "Smartphone Galaxy S23",
       "preco": 4999.99,
-      "categoria": "Smartphones",
+      "categoria": "Eletrônicos",
       "quantidade": 150,
       "descricao": "Smartphone com tela AMOLED de 6.1 polegadas, processador Snapdragon 8 Gen 2 e câmera de 50 MP.",
       "imagem": "https://melhores.com/resources/celular/2024/samsung-galaxy-s23/samsung-galaxy-s23.webp",
@@ -201,5 +201,16 @@
       "id": "hxcloud2"
     }
   ],
-  "carrinho": []
+  "carrinho": [
+    {
+      "id": "42c9",
+      "imagem": "https://www.comix.com.br/media/catalog/product/cache/10252bb74c3c8db84130a54eefb75975/d/u/dunacapanova.png",
+      "nome": "Livro de Ficção",
+      "preco": 49.99,
+      "slug": "livro-de-ficcao",
+      "categoria": "Livros",
+      "descricao": "Livro de ficção com história envolvente e personagens cativantes.",
+      "quantidade": 1
+    }
+  ]
 }
