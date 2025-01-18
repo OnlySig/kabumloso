@@ -63,7 +63,7 @@
     {
       "nome": "Ventilador de Mesa",
       "preco": 129.99,
-      "categoria": "Utilidades Domésticas",
+      "categoria": "Eletrodomésticos",
       "quantidade": 50,
       "descricao": "Ventilador compacto e silencioso com três velocidades.",
       "imagem": "https://paginadeproduto.emondial.com/HTML-VSP-40-B/images/produto-medidas-vsp40b.png",
@@ -103,7 +103,7 @@
     {
       "nome": "Placa de Vídeo NVIDIA GeForce RTX 4080",
       "preco": 7999.99,
-      "categoria": "Placas de Vídeo",
+      "categoria": "Computador",
       "quantidade": 100,
       "descricao": "Placa de vídeo de última geração com 16 GB GDDR6X, ideal para jogos e criação de conteúdo.",
       "imagem": "https://m.media-amazon.com/images/I/715V9bTWg8L._AC_UF894,1000_QL80_.jpg",
@@ -123,7 +123,7 @@
     {
       "nome": "Placa-Mãe ASUS ROG STRIX B650E-F",
       "preco": 1699.99,
-      "categoria": "Placas-Mãe",
+      "categoria": "Computador",
       "quantidade": 120,
       "descricao": "Placa-mãe para processadores AMD Ryzen, com suporte a DDR5 e PCIe 5.0.",
       "imagem": "https://dlcdnwebimgs.asus.com/files/media/B51D103D-2941-412E-8479-AF994957093B/v1/img/performance/cooling/header-pd.png",
@@ -163,7 +163,7 @@
     {
       "nome": "SSD Kingston NV2 1TB",
       "preco": 499.99,
-      "categoria": "Armazenamento",
+      "categoria": "Computador",
       "quantidade": 300,
       "descricao": "SSD NVMe com velocidade de leitura de até 3500 MB/s e capacidade de 1 TB.",
       "imagem": "https://cdn.awsli.com.br/600x450/2615/2615940/produto/269309929/ssd-1tb-1-eka1c81sjr.png",
@@ -203,13 +203,13 @@
   ],
   "carrinho": [
     {
-      "id": "42c9",
-      "imagem": "https://www.comix.com.br/media/catalog/product/cache/10252bb74c3c8db84130a54eefb75975/d/u/dunacapanova.png",
-      "nome": "Livro de Ficção",
-      "preco": 49.99,
-      "slug": "livro-de-ficcao",
-      "categoria": "Livros",
-      "descricao": "Livro de ficção com história envolvente e personagens cativantes.",
+      "id": "1d1e",
+      "imagem": "https://www.meupositivo.com.br/uploads/images/linhas/empresas/notebook/N1240/N1240_W10Pro.png",
+      "nome": "Notebook Ultra",
+      "preco": 4999.99,
+      "slug": "notebook-ultra",
+      "categoria": "Informática",
+      "descricao": "Notebook com processador Intel i7, 16GB RAM e SSD de 512GB.",
       "quantidade": 1
     }
   ]

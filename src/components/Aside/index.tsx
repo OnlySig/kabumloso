@@ -17,7 +17,7 @@ const Aside = () => {
       }`}
     >
       <div className="flex flex-col">
-        <div className="flex justify-between items-center mb-2">
+        <div className="flex justify-between items-center mb-5">
           <h2 className="font-bold opacity-90 uppercase text-[#c9c7db]">
             Carrinho
           </h2>

@@ -19,12 +19,12 @@ const BannerHeader = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImg((prev) => (prev === 1 ? 2 : 1));
-    }, 7000);
+    }, 15000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <header className="relative">
+    <header className="relative mt-10">
       <img
         src={imgSrc(currentImg)}
         alt="banner do site bonitão xddddd"
@@ -39,7 +39,7 @@ const BannerHeader = () => {
         ></span>
         <span
           className={`${
-            currentImg === 1 ? "opacity-50" : "opacity-100"
+            currentImg === 2 ? "opacity-100" : "opacity-50"
           } w-3 h-3 bg-white rounded-full cursor-pointer`}
           onClick={() => setCurrentImg(2)}
         ></span>
