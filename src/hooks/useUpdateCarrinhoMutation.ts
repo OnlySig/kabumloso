@@ -41,7 +41,7 @@ export const useUpdateCarrinhoMutation = () => {
       else return http.post("carrinho", { ...value, quantidade: 1 });
     },
     onSuccess: () => {
-      queryClient.invalidateQueries(["carrinho"]);
+      queryClient.invalidateQueries({ queryKey: ["carrinho"] }); //* atualiza o carrinho a cada interação bem sucedida.
     },
   });
 };

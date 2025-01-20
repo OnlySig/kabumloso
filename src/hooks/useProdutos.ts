@@ -41,4 +41,29 @@ export const useProdutosCategorias = () => {
   return onlyNewTags;
 };
 
+export const useProdutosRandom = () => {
+  //! código totalmente criminoso, desculpe pela vista, mas foi oque deu pra fazer sem chatGPT KKKKKKKKKKKKKK :(
+  const produtosAleatorios: IProdutos[] = [];
+  const numerosAleatorios: number[] = [];
+  for (let i = 0; i <= 4; i++) {
+    const numero = Math.floor(Math.random() * 20);
+    if (!numerosAleatorios.includes(numero)) {
+      numerosAleatorios.push(numero);
+    } else {
+      i--;
+    }
+  }
+  const { data } = useProdutos(true, "produtos");
+  if (data && data?.length > 0) {
+    numerosAleatorios?.forEach((numero) => {
+      produtosAleatorios.push(
+        data.find((_, index) => {
+          return index === numero;
+        })!
+      );
+    });
+  }
+  return produtosAleatorios;
+};
+
 export default useProdutos;

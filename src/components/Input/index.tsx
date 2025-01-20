@@ -9,6 +9,10 @@ type InputProps = {
   id?: string;
   addBtn?: boolean;
   children?: ReactNode;
+  value: string;
+  setValue: (e: string) => void;
+  onClick: () => void;
+  onKeyDown: (e: string) => void;
 };
 
 const Input = ({
@@ -20,6 +24,10 @@ const Input = ({
   TxtContentLabel,
   addBtn,
   children,
+  value,
+  setValue,
+  onClick,
+  onKeyDown,
 }: InputProps) => {
   return (
     <div className="flex px-5 w-full max-w-screen-sm mx-auto">
@@ -30,9 +38,14 @@ const Input = ({
         placeholder={placeholder}
         required={required}
         className="bg-white w-full p-2 rounded-s-lg outline-none"
+        value={value}
+        onChange={(e) => setValue(e.target.value)}
+        onKeyDown={(e) => onKeyDown(e.key)}
       />
       {addBtn && (
-        <button className="bg-white px-1 rounded-e-lg">{children}</button>
+        <button onClick={onClick} className="bg-white px-1 rounded-e-lg">
+          {children}
+        </button>
       )}
     </div>
   );

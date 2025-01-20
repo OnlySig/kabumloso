@@ -201,16 +201,5 @@
       "id": "hxcloud2"
     }
   ],
-  "carrinho": [
-    {
-      "id": "1d1e",
-      "imagem": "https://www.meupositivo.com.br/uploads/images/linhas/empresas/notebook/N1240/N1240_W10Pro.png",
-      "nome": "Notebook Ultra",
-      "preco": 4999.99,
-      "slug": "notebook-ultra",
-      "categoria": "Informática",
-      "descricao": "Notebook com processador Intel i7, 16GB RAM e SSD de 512GB.",
-      "quantidade": 1
-    }
-  ]
+  "carrinho": []
 }

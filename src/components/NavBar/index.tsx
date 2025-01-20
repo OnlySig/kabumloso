@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useToggleThemeContext from "../../hooks/useToggleThemeContext";
 import { MdOutlineWbSunny, MdOutlineSearch } from "react-icons/md";
 import { FaMoon, FaShoppingCart } from "react-icons/fa";
 import useCarrinhoContext from "../../hooks/useCarrinhoContext";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Input from "../Input";
 import Tags from "../Tags";
 
@@ -13,9 +13,14 @@ const propsStyles = {
 };
 
 const NavBar = () => {
+  const navegar = useNavigate();
   const { updateTheme, getTheme } = useToggleThemeContext();
   const { updateToggleAside } = useCarrinhoContext();
   const theme = getTheme();
+  const [searchProduto, setSearchProduto] = useState("");
+  const handleInputContent = () => {
+    navegar(`/search/q/${searchProduto}`);
+  };
   useEffect(() => {
     document.body.className = theme ? "dark" : "light";
   }, [theme]);
@@ -25,7 +30,17 @@ const NavBar = () => {
         <Link to={"/"}>
           <h1 className="text-white">Kabumloso</h1>
         </Link>
-        <Input placeholder="Buscar produto" required addBtn>
+        <Input
+          placeholder="Buscar produto"
+          required
+          addBtn
+          value={searchProduto}
+          setValue={setSearchProduto}
+          onClick={handleInputContent}
+          onKeyDown={(e) => {
+            if (e === "Enter") return handleInputContent();
+          }}
+        >
           <MdOutlineSearch style={{ color: "#42464da4", fontSize: "30px" }} />
         </Input>
         <div className="flex gap-4">

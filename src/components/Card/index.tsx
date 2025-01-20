@@ -52,12 +52,13 @@ const Card = ({
     updateFieldCarrinho(value, opcao);
   };
   const precoFormatado = ConvertedCurrent(preco);
+  const precoComQtdFormatado = ConvertedCurrent(preco * quantidade);
   return (
     <li
       className={`${
         inCard
           ? "flex items-center mb-4 bg-white relative"
-          : "flex flex-col justify-between text-center rounded border items-center w-auto bg-white transition shadow-lg hover:shadow-2xl mb-5"
+          : "flex flex-col justify-between text-center rounded border items-center w-auto bg-white transition shadow-lg hover:shadow-2xl mb-5 max-w-60"
       }`}
       onMouseEnter={() => setToggleComprar(true)}
       onMouseLeave={() => setToggleComprar(false)}
@@ -105,7 +106,9 @@ const Card = ({
                 <h3 className="font-bold opacity-90 uppercase">{nome}</h3>
                 <p className="font-thin text-primarycolor400">
                   Categoria de{" "}
-                  <span className="font-semibold">{categoria}</span>
+                  <Link to={`/search/tag/${categoria}`}>
+                    <span className="font-semibold">{categoria}</span>
+                  </Link>
                 </p>
               </>
             ) : (
@@ -114,7 +117,7 @@ const Card = ({
           </div>
           <span className="font-bold text-primarycolor400">
             {inCard ? (
-              `R$ ${(preco * quantidade).toFixed(1)}`
+              precoComQtdFormatado
             ) : (
               <p className="text-[20px]">{!toggleComprar && precoFormatado}</p>
             )}
