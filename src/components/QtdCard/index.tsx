@@ -1,27 +1,25 @@
-import { useState } from "react";
+import { ConvertedCurrent } from "../../utils/ConvertedCurrent";
 
 const QtdCard = ({ preco }: { preco: number | undefined }) => {
-  const [qtd, setQtd] = useState(1);
   if (!preco) {
     return <h1>{"Indisponível!"}</h1>;
   }
-  const precoReal = (preco * qtd).toFixed(1);
+  const precoDesconto = Number((preco * 0.07).toFixed());
+  const precoDescontadoFormatado = ConvertedCurrent(preco - precoDesconto);
   return (
-    <>
-      <button
-        className=""
-        onClick={() => setQtd((prevQtd) => prevQtd - 1)}
-        disabled={qtd < 2}
-      >
-        -
-      </button>
-
-      {qtd}
-      <button className="" onClick={() => setQtd((prevQtd) => prevQtd + 1)}>
-        +
-      </button>
-      <div className="">{`R$${precoReal}`}</div>
-    </>
+    <div className="flex flex-col ">
+      <div>
+        <div className="w-52">
+          <h2 className="text-4xl font-bold text-primarycolor400">
+            {precoDescontadoFormatado}
+          </h2>
+          <p className="text-sm">
+            À vista no PIX com{" "}
+            <span className="font-bold opacity-90">7% OFF</span>
+          </p>
+        </div>
+      </div>
+    </div>
   );
 };
 

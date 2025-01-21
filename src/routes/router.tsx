@@ -4,6 +4,8 @@ import Home from "../pages/home";
 import Product from "../pages/Product";
 import Categoria from "../pages/Search/Categoria";
 import SearchLayout from "../pages/Search/SearchLayout";
+import LayoutAdmin from "../pages/admin/layoutAdmin";
+import Dashboard from "../pages/admin/dashboard/dashboard";
 
 export const routes = createBrowserRouter([
   {
@@ -31,6 +33,16 @@ export const routes = createBrowserRouter([
             element: <Categoria />,
           },
         ],
+      },
+    ],
+  },
+  {
+    path: "admin",
+    element: <LayoutAdmin />,
+    children: [
+      {
+        path: "dashboard",
+        element: <Dashboard />,
       },
     ],
   },

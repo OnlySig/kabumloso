@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 import useToggleThemeContext from "../../hooks/useToggleThemeContext";
-import { MdOutlineWbSunny, MdOutlineSearch } from "react-icons/md";
+import {
+  MdOutlineWbSunny,
+  MdOutlineSearch,
+  MdAdminPanelSettings,
+} from "react-icons/md";
 import { FaMoon, FaShoppingCart } from "react-icons/fa";
 import useCarrinhoContext from "../../hooks/useCarrinhoContext";
 import { Link, useNavigate } from "react-router-dom";
@@ -26,7 +30,7 @@ const NavBar = () => {
   }, [theme]);
   return (
     <nav className="flex flex-col">
-      <div className="w-full flex items-center justify-between px-10 2xl:px-0 bg-primarycolor500 py-8 max-w-[1490px] mx-auto mb-5">
+      <div className="w-full flex items-center justify-between px-10 max-sm:px-0 2xl:px-0 bg-primarycolor500 py-8 max-w-[1490px] mx-auto mb-5">
         <Link to={"/"}>
           <h1 className="text-white">Kabumloso</h1>
         </Link>
@@ -46,6 +50,9 @@ const NavBar = () => {
         <div className="flex gap-4">
           <button onClick={() => updateToggleAside(true)}>
             <FaShoppingCart style={propsStyles} />
+          </button>
+          <button onClick={() => navegar("/admin/dashboard")}>
+            <MdAdminPanelSettings style={propsStyles} />
           </button>
           <button onClick={updateTheme}>
             {theme ? (

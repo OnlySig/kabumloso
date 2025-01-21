@@ -119,9 +119,18 @@ const Card = ({
             {inCard ? (
               precoComQtdFormatado
             ) : (
-              <p className="text-[20px]">{!toggleComprar && precoFormatado}</p>
+              <p className={`text-[20px] ${quantidade <= 0 && "text-red-500"}`}>
+                {!toggleComprar &&
+                  `${quantidade > 0 ? precoFormatado : "ESGOTADO"}`}
+              </p>
             )}
-            {!inCard && toggleComprar && <BtnCard onClick={handleClick} />}
+            {!inCard && toggleComprar && (
+              <BtnCard
+                onClick={handleClick}
+                text={quantidade <= 0 ? "Esgotado" : "Comprar"}
+                isEsgotado={quantidade <= 0}
+              />
+            )}
           </span>
           {inCard && (
             <div className="text-xl flex gap-3">

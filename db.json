@@ -199,6 +199,16 @@
       "imagem": "https://br-media.hptiendaenlinea.com/catalog/product/cache/b3b166914d87ce343d4dc5ec5117b502/6/Y/6Y2G8AA-1_T1729702228.png",
       "slug": "headset-hyperx-cloud2",
       "id": "hxcloud2"
+    },
+    {
+      "nome": "Processador AMD Ryzen 7 5700X3D",
+      "preco": 1699.99,
+      "categoria": "Computador",
+      "quantidade": 0,
+      "descricao": " O AMD Ryzen 7 5700X3D é um processador de alto desempenho, especialmente projetado para gamers. Com sua tecnologia 3D V-Cache, ele oferece um desempenho excepcional em jogos, permitindo que você experimente taxas de quadros mais altas e uma experiência de jogo mais fluida.",
+      "imagem": "https://images9.kabum.com.br/produtos/fotos/520369/processador-amd-ryzen-7-5700x3d-3-6-ghz-4-1ghz-max-turbo-cache-4mb-8-nucleos-16-threads-am4-video-integrado-100-100001503wof_1708023990_g.jpg",
+      "slug": "processador-amd-ryzen7x3d",
+      "id": "axckfl"
     }
   ],
   "carrinho": []

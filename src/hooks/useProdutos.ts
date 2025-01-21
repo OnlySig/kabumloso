@@ -46,7 +46,7 @@ export const useProdutosRandom = () => {
   const produtosAleatorios: IProdutos[] = [];
   const numerosAleatorios: number[] = [];
   for (let i = 0; i <= 4; i++) {
-    const numero = Math.floor(Math.random() * 20);
+    const numero = Math.floor(Math.random() * 21);
     if (!numerosAleatorios.includes(numero)) {
       numerosAleatorios.push(numero);
     } else {
