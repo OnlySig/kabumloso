@@ -4,8 +4,9 @@ import Home from "../pages/home";
 import Product from "../pages/Product";
 import Categoria from "../pages/Search/Categoria";
 import SearchLayout from "../pages/Search/SearchLayout";
-import LayoutAdmin from "../pages/admin/layoutAdmin";
-import Dashboard from "../pages/admin/dashboard/dashboard";
+import LayoutAdmin from "../pages/admin/LayoutAdmin";
+import Dashboard from "../pages/admin/Dashboard";
+import UpsertForm from "../pages/admin/UpsertForm";
 
 export const routes = createBrowserRouter([
   {
@@ -43,6 +44,14 @@ export const routes = createBrowserRouter([
       {
         path: "dashboard",
         element: <Dashboard />,
+      },
+      {
+        path: "upsert/:id",
+        element: <UpsertForm />,
+      },
+      {
+        path: "upsert",
+        element: <UpsertForm />,
       },
     ],
   },

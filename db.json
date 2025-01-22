@@ -2,18 +2,18 @@
   "produtos": [
     {
       "nome": "Smartphone XYZ",
-      "preco": 2599.99,
       "categoria": "Eletrônicos",
-      "quantidade": 20,
       "descricao": "Smartphone com tela de 6.5 polegadas, 128GB de armazenamento e câmera tripla.",
       "imagem": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-a556ezklzto/gallery/br-galaxy-a55-5g-sm-a556-sm-a556ezklzto-thumb-540317360?$264_264_PNG$",
-      "slug": "smartphone-xyz",
-      "id": "3f92"
+      "preco": 2599.99,
+      "quantidade": "21",
+      "id": "3f92",
+      "slug": "smartphone-xyz"
     },
     {
       "nome": "Notebook Ultra",
       "preco": 4999.99,
-      "categoria": "Informática",
+      "categoria": "Notebooks",
       "quantidade": 10,
       "descricao": "Notebook com processador Intel i7, 16GB RAM e SSD de 512GB.",
       "imagem": "https://www.meupositivo.com.br/uploads/images/linhas/empresas/notebook/N1240/N1240_W10Pro.png",
@@ -211,5 +211,16 @@
       "id": "axckfl"
     }
   ],
-  "carrinho": []
+  "carrinho": [
+    {
+      "id": "ad82",
+      "imagem": "https://images.kabum.com.br/produtos/fotos/sync_mirakl/206206/Cafeteira-Eletrica-15-Xicaras-Preta-CAF100-127v_1714154311_g.jpg",
+      "nome": "Cafeteira Elétrica",
+      "preco": 199.99,
+      "slug": "cafeteira-eletrica",
+      "categoria": "Eletrodomésticos",
+      "descricao": "Cafeteira com design compacto e preparação rápida de café.",
+      "quantidade": 1
+    }
+  ]
 }

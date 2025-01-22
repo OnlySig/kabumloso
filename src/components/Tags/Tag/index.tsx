@@ -1,12 +1,19 @@
 import { Link } from "react-router-dom";
 
-const Tag = ({ categoria, index }: { categoria: string; index: number }) => {
+const Tag = ({
+  categoria,
+  setToggleDepartamento,
+}: {
+  categoria: string;
+  setToggleDepartamento: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   return (
     <Link
-      className={`${index > 2 && "max-xl:hidden"} w-full`}
+      onMouseEnter={() => setToggleDepartamento(true)}
+      onMouseLeave={() => setToggleDepartamento(false)}
       to={`search/tag/${categoria}`}
     >
-      <span className="text-white bg-primarycolor300 py-2 px-2 block w-full text-center cursor-pointer">
+      <span className="hover:bg-[#504881] text-left text-white bg-primarycolor300 py-2 px-2 block w-full cursor-pointer">
         {categoria}
       </span>
     </Link>

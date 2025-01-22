@@ -1,8 +1,9 @@
 import { ConvertedCurrent } from "../../utils/ConvertedCurrent";
-import { GrAscend } from "react-icons/gr";
-import { ImSortAmountAsc } from "react-icons/im";
+//import { GrAscend } from "react-icons/gr";
+//import { ImSortAmountAsc } from "react-icons/im";
 import { MdDelete, MdEdit } from "react-icons/md";
 import useProdutosMutation from "../../hooks/useProdutosMutation";
+import { Link } from "react-router-dom";
 
 const ListItem = ({
   nome,
@@ -19,9 +20,9 @@ const ListItem = ({
   const precoFormatado = ConvertedCurrent(preco);
   const handleClick = async () => {
     try {
-      updateProduto({ id, action: "delete" });
+      updateProduto({ id, action: "delete", value: { nome } });
     } catch (error) {
-      console.log(error);
+      console.error((error as Error).message);
     }
   };
   return (
@@ -41,9 +42,11 @@ const ListItem = ({
             style={{ color: "#db5656", fontSize: "30px", cursor: "pointer" }}
             onClick={() => handleClick()}
           />
-          <MdEdit
-            style={{ color: "#fcc71a", fontSize: "30px", cursor: "pointer" }}
-          />
+          <Link to={`/admin/upsert/${id}`}>
+            <MdEdit
+              style={{ color: "#fcc71a", fontSize: "30px", cursor: "pointer" }}
+            />
+          </Link>
         </span>
       </div>
     </li>

@@ -5,9 +5,7 @@ import Footer from "../components/Footer";
 const layoutBase = () => {
   return (
     <>
-      <div className="bg-primarycolor500">
-        <NavBar />
-      </div>
+      <NavBar />
       <section className="max-w-[1490px] mx-auto">
         <Outlet />
       </section>

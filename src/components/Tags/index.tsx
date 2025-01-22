@@ -1,14 +1,26 @@
 import { useProdutosCategorias } from "../../hooks/useProdutos";
 import Tag from "./Tag";
 
-const Tags = () => {
+const Tags = ({
+  toggleDepartamento,
+  setToggleDepartamento,
+}: {
+  toggleDepartamento: boolean;
+  setToggleDepartamento: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const tags = useProdutosCategorias();
   return (
-    <ul className="flex flex-grow justify-between font-bold uppercase bg-primarycolor500">
-      {tags?.map((tag, index) => (
-        <Tag categoria={tag} index={index} key={tag} />
-      ))}
-    </ul>
+    <div className={!toggleDepartamento ? "hidden" : "max-w-[1490px] relative"}>
+      <ul className="flex flex-col flex-grow justify-between font-bold uppercase absolute z-10 w-[196px]">
+        {tags?.map((tag) => (
+          <Tag
+            categoria={tag}
+            key={tag}
+            setToggleDepartamento={setToggleDepartamento}
+          />
+        ))}
+      </ul>
+    </div>
   );
 };
 

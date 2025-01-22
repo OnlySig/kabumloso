@@ -10,7 +10,7 @@ const Categoria = () => {
     pesquisa ? `produtos?nome=${pesquisa}` : `produtos?categoria=${categoria}`
   );
   return (
-    <section className="px-10 py-4 2xl:px-0">
+    <main className="px-10 py-4 2xl:px-0 2xl:min-h-[850px]">
       <div className="flex items-center text-primarycolor500 font-bold">
         <h2>Kabumloso</h2>
         <span className="text-2xl mr-2 ml-2">&gt;</span>
@@ -22,7 +22,7 @@ const Categoria = () => {
         ))}
         <Aside />
       </div>
-    </section>
+    </main>
   );
 };
 

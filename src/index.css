@@ -28,6 +28,7 @@ h2 {
 }
 body {
   overflow-x: hidden;
+  background-color: #e6e5ef;
 }
 
 body.light {
