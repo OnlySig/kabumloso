@@ -58,7 +58,7 @@ const Card = ({
       className={`${
         inCard
           ? "flex items-center mb-4 bg-white relative"
-          : "flex flex-col justify-between text-center rounded border items-center w-auto bg-white transition shadow-lg hover:shadow-2xl mb-5 max-w-60"
+          : "flex flex-col justify-between text-center rounded border items-center w-auto bg-white transition shadow-lg hover:shadow-2xl mb-5 max-w-56"
       }`}
       onMouseEnter={() => setToggleComprar(true)}
       onMouseLeave={() => setToggleComprar(false)}

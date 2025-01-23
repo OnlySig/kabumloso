@@ -3,7 +3,7 @@ import { http } from "../http";
 import { IProdutos } from "../types/IProdutos";
 
 const getProdutosPaginados = async (): Promise<IProdutos[]> => {
-  const { data } = await http.get("produtos?_page=1&_per_page=10"); //? primeiros 10 produtos
+  const { data } = await http.get("produtos?_page=1&_per_page=12"); //? primeiros 10 produtos
   return data.data;
 };
 

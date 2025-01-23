@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 
-type InputProps = {
+type InputProps<T> = {
   type?: string;
   required: boolean;
   isLabel?: boolean;
@@ -10,13 +10,13 @@ type InputProps = {
   addBtn?: boolean;
   children?: ReactNode;
   isSearch?: boolean;
-  value: string;
-  setValue: (e: string) => void;
+  value: T;
+  setValue: (e: T) => void;
   onClick?: () => void;
   onKeyDown?: (e: string) => void;
 };
 
-const Input = ({
+const Input = <T extends string | number>({
   isSearch = false,
   placeholder,
   required,
@@ -30,15 +30,17 @@ const Input = ({
   setValue,
   onClick,
   onKeyDown,
-}: InputProps) => {
+}: InputProps<T>) => {
   return (
     <div
       className={`${
-        isSearch ? "flex px-5 w-full max-w-screen-sm mx-auto" : "flex flex-col"
+        isSearch
+          ? "flex px-5 w-full max-w-screen-sm mx-auto"
+          : "flex flex-col w-full"
       }`}
     >
       {isLabel && (
-        <label htmlFor={id} className="text-sm text-zinc-800">
+        <label htmlFor={id} className="text-sm text-zinc-800 mb-1">
           {TxtContentLabel}
         </label>
       )}
@@ -50,15 +52,22 @@ const Input = ({
         className={`${
           isSearch
             ? "bg-white w-full p-2 rounded-l-lg outline-none"
-            : "outline-none border hover:border-[#98D8EF] hover:border-[2px] focus:border-[#98D8EF] focus:border-[2px] rounded-sm mb-2 p-1 text-[#535252]"
+            : "outline-none border-[2px] hover:border-[#98D8EF] focus:border-[#98D8EF] rounded-sm mb-2 p-1 text-[#535252]"
         }`}
         value={value}
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => {
+          const inputValue =
+            type === "number"
+              ? (parseFloat(e.target.value) as T)
+              : (e.target.value as T);
+          setValue(inputValue);
+        }}
         onKeyDown={(e) => {
           if (onKeyDown) {
             onKeyDown(e.key);
           }
         }}
+        min={0}
       />
       {addBtn && (
         <button onClick={onClick} className="bg-white px-1 rounded-e-lg">

@@ -1,4 +1,4 @@
-import { Link, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import useProdutosMutation, {
   useGetProdutos,
 } from "../../../hooks/useProdutosMutation";
@@ -6,21 +6,23 @@ import Input from "../../../components/Input";
 import Spinner from "../../../components/Spinner";
 import { useEffect, useMemo, useState } from "react";
 import { IProdutos } from "../../../types/IProdutos";
+import { useProdutosCategorias } from "../../../hooks/useProdutos";
+import Select from "../../../components/Select";
 
 const UpsertForm = () => {
   const { id } = useParams();
-  const { data, isLoading } = useGetProdutos(id ?? "");
+  const navegar = useNavigate();
+  const { data, isLoading, isFetching } = useGetProdutos(id ?? "");
   const { mutate: upsertProduto } = useProdutosMutation();
   const produto: IProdutos = useMemo(() => data?.data?.[0] ?? {}, [data]);
   const isUpdate = Object.keys(produto).length ? true : false;
-
   const [nome, setNome] = useState("");
   const [categoria, setCategoria] = useState("");
   const [descricao, setDescricao] = useState("");
   const [imagem, setImg] = useState("");
   const [preco, setPreco] = useState(0);
   const [quantidade, setQtd] = useState(0);
-
+  const categorias = useProdutosCategorias();
   useEffect(() => {
     if (isUpdate) {
       setNome(produto.nome || "");
@@ -30,7 +32,11 @@ const UpsertForm = () => {
       setPreco(produto.preco || 0);
       setQtd(produto.quantidade || 0);
     }
-  }, [produto, isUpdate]);
+    if (id && Object.keys(produto).length <= 0 && !isFetching) {
+      alert("Produto não encontrado!");
+      navegar("/admin/dashboard");
+    }
+  }, [produto, isUpdate, id]);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -72,7 +78,7 @@ const UpsertForm = () => {
         className="h-screen flex flex-col items-center justify-center"
         onSubmit={handleSubmit}
       >
-        <div className="flex flex-col w-[700px] bg-white p-6 rounded-2xl">
+        <div className="flex flex-col w-[700px] max-md:w-full bg-white p-6 rounded-2xl">
           <div className="flex items-center justify-between">
             <h2>
               {isUpdate
@@ -81,24 +87,23 @@ const UpsertForm = () => {
             </h2>
             <Link to={"/admin/dashboard"}>dashboard</Link>
           </div>
-          <Input
-            id="nome"
-            placeholder="nome do produto"
-            setValue={(e) => setNome(e)}
-            value={nome}
-            TxtContentLabel="Nome do produto"
-            required
-            isLabel
-          />
-          <Input
-            id="categoria"
-            placeholder="nome da categoria"
-            setValue={(e) => setCategoria(e)}
-            value={categoria}
-            TxtContentLabel="Nome da categoria"
-            required
-            isLabel
-          />
+          <div className="flex justify-between gap-4">
+            <Input
+              id="nome"
+              placeholder="nome do produto"
+              setValue={(e) => setNome(e)}
+              value={nome}
+              TxtContentLabel="Nome do produto"
+              required
+              isLabel
+            />
+            <Select
+              arry={categorias}
+              label="Categoria"
+              selecionado={categoria}
+              setSelecionado={(e) => setCategoria(e)}
+            />
+          </div>
           <Input
             id="produto"
             placeholder="descrição do produto"
@@ -121,7 +126,7 @@ const UpsertForm = () => {
             id="preco"
             placeholder="preço do produto"
             setValue={(e) => setPreco(e)}
-            value={preco.toString()}
+            value={preco}
             TxtContentLabel="Preço do produto"
             required
             isLabel
@@ -131,7 +136,7 @@ const UpsertForm = () => {
             id="qtd"
             placeholder="quantidade do produto"
             setValue={(e) => setQtd(e)}
-            value={quantidade.toString()}
+            value={quantidade}
             TxtContentLabel="Quantidade do produto"
             required
             isLabel

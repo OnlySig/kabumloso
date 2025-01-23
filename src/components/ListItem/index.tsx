@@ -7,11 +7,13 @@ import { Link } from "react-router-dom";
 
 const ListItem = ({
   nome,
+  categoria,
   quantidade,
   preco,
   id,
 }: {
   nome: string;
+  categoria: string;
   quantidade: number;
   id: string;
   preco: number;
@@ -27,16 +29,27 @@ const ListItem = ({
   };
   return (
     <li className="flex justify-between text-left">
-      <div className="w-1/4 border pl-2">
+      <div className="w-1/5 border pl-2">
         <span className="text-sm">{nome}</span>
       </div>
-      <div className="w-1/4 border pl-2">
-        <span className="text-sm">{quantidade}</span>
+      <div
+        className={`${
+          categoria ? "w-1/5 border pl-2" : "w-1/5 border pl-2 bg-red-500"
+        }`}
+      >
+        <span className="text-sm">{categoria}</span>
       </div>
-      <div className="w-1/4 border pl-2">
+      <div
+        className={`${
+          quantidade <= 0 ? "w-1/5 border pl-2 bg-red-500" : "w-1/5 border pl-2"
+        }`}
+      >
+        <span className={"text-sm"}>{quantidade}</span>
+      </div>
+      <div className="w-1/5 border pl-2">
         <span className="text-sm">{precoFormatado}</span>
       </div>
-      <div className="w-1/4 border pl-2">
+      <div className="w-1/5 border pl-2">
         <span className="flex gap-2">
           <MdDelete
             style={{ color: "#db5656", fontSize: "30px", cursor: "pointer" }}

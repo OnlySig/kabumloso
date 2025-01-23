@@ -6,9 +6,9 @@ const Dashboard = () => {
   const { data } = useProdutos(true, "produtos");
   return (
     <>
-      <div className="max-w-[1440px] mx-auto flex flex-col justify-center h-full">
+      <div className="max-w-[1440px] mx-auto flex flex-col justify-center">
         <div className="bg-white rounded-xl p-5">
-          <div className="flex justify-between my-3">
+          <div className="flex justify-between my-3 max-sm:flex-col">
             <div className="flex gap-3 items-baseline">
               <h2 className="text-[#69a4fd] text-center font-bold">
                 Lista de Produtos
@@ -27,6 +27,9 @@ const Dashboard = () => {
           <div className="flex justify-start">
             <p className="font-bold w-1/4 border pl-2 text-[#4891ff]">Nome</p>
             <p className="font-bold w-1/4 border pl-2 text-[#4891ff]">
+              Categoria
+            </p>
+            <p className="font-bold w-1/4 border pl-2 text-[#4891ff]">
               Quantidade
             </p>
             <p className="font-bold w-1/4 border pl-2 text-[#4891ff]">Preço</p>
@@ -38,6 +41,7 @@ const Dashboard = () => {
             {data?.map((produto) => (
               <ListItem
                 nome={produto.nome}
+                categoria={produto.categoria}
                 preco={produto.preco}
                 quantidade={produto.quantidade}
                 id={produto.id}

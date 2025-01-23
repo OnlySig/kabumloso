@@ -81,14 +81,14 @@
       "id": "7d3e"
     },
     {
-      "nome": "Livro de Ficção",
-      "preco": 49.99,
+      "nome": "Duna",
       "categoria": "Livros",
-      "quantidade": 11,
-      "descricao": "Livro de ficção com história envolvente e personagens cativantes.",
+      "descricao": "Primeiro livro da grande saga duna, criado pelo lendário escritor frank herbert, nessa história será uma introdução tanto dos personagens quanto a grande história e universo de duna, um universo grandioso e complexo.",
       "imagem": "https://www.comix.com.br/media/catalog/product/cache/10252bb74c3c8db84130a54eefb75975/d/u/dunacapanova.png",
-      "slug": "livro-de-ficcao",
-      "id": "42c9"
+      "preco": "79.99",
+      "quantidade": 11,
+      "id": "42c9",
+      "slug": "livro-de-ficcao"
     },
     {
       "nome": "Smartphone Galaxy S23",
@@ -96,7 +96,7 @@
       "categoria": "Eletrônicos",
       "quantidade": 150,
       "descricao": "Smartphone com tela AMOLED de 6.1 polegadas, processador Snapdragon 8 Gen 2 e câmera de 50 MP.",
-      "imagem": "https://melhores.com/resources/celular/2024/samsung-galaxy-s23/samsung-galaxy-s23.webp",
+      "imagem": "https://images.samsung.com/is/image/samsung/p6pim/br/sm-s711blgkzto/gallery/br-galaxy-s23-fe-s711-sm-s711blgkzto-538428014?$684_547_PNG$",
       "slug": "smartphone-galaxy-s23",
       "id": "s123"
     },
@@ -202,25 +202,24 @@
     },
     {
       "nome": "Processador AMD Ryzen 7 5700X3D",
-      "preco": 1699.99,
       "categoria": "Computador",
-      "quantidade": 0,
       "descricao": " O AMD Ryzen 7 5700X3D é um processador de alto desempenho, especialmente projetado para gamers. Com sua tecnologia 3D V-Cache, ele oferece um desempenho excepcional em jogos, permitindo que você experimente taxas de quadros mais altas e uma experiência de jogo mais fluida.",
       "imagem": "https://images9.kabum.com.br/produtos/fotos/520369/processador-amd-ryzen-7-5700x3d-3-6-ghz-4-1ghz-max-turbo-cache-4mb-8-nucleos-16-threads-am4-video-integrado-100-100001503wof_1708023990_g.jpg",
-      "slug": "processador-amd-ryzen7x3d",
-      "id": "axckfl"
+      "preco": 1699.99,
+      "quantidade": 0,
+      "id": "axckfl",
+      "slug": "processador-amd-ryzen7x3d"
+    },
+    {
+      "id": "a997",
+      "nome": "Monitor Gamer Curvo LG UltraGear LG 34",
+      "categoria": "Monitores",
+      "descricao": "A tela UltraWide™ WQHD (resolução de 3440x1440, proporção 21:9) é ótima para jogos. Os jogadores podem ver mais informações na tela do jogo.",
+      "imagem": "https://images8.kabum.com.br/produtos/fotos/472908/monitor-gamer-lg-ultragear-lg-34-curvo-led-wqhd-ultrawide-160hz-1ms-displayport-e-hdmi-amd-freesync-premium-hdr10-99-srgb-34gp63a-b_1717591886_g.jpg",
+      "preco": 2199.99,
+      "quantidade": 50,
+      "slug": "monitor-gamer-curvo-lg-ultragear-lg-34"
     }
   ],
-  "carrinho": [
-    {
-      "id": "ad82",
-      "imagem": "https://images.kabum.com.br/produtos/fotos/sync_mirakl/206206/Cafeteira-Eletrica-15-Xicaras-Preta-CAF100-127v_1714154311_g.jpg",
-      "nome": "Cafeteira Elétrica",
-      "preco": 199.99,
-      "slug": "cafeteira-eletrica",
-      "categoria": "Eletrodomésticos",
-      "descricao": "Cafeteira com design compacto e preparação rápida de café.",
-      "quantidade": 1
-    }
-  ]
+  "carrinho": []
 }

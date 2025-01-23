@@ -1,11 +1,10 @@
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { http } from "../http";
 import { IProdutos } from "../types/IProdutos";
-import useProdutos from "./useProdutos";
 
-export const useGetProdutos = (id: string) => {
+export const useGetProdutos = (id?: string) => {
   return useQuery({
-    queryKey: ["produto", id],
+    queryKey: ["produtos", id],
     queryFn: () => {
       return http.get(`produtos?id=${id}`);
     },
@@ -25,18 +24,24 @@ const useProdutosMutation = () => {
       action: "delete" | "new" | "edit";
       value: Partial<IProdutos>; //? Permite passar apenas os campos necessários
     }) => {
-      if (action === "delete") {
-        const deletar = confirm(`deseja deletar o produto ${value?.nome}`);
-        if (deletar) return http.delete(`produtos/${id}`);
-        return;
-      }
-      if (action === "new") {
-        alert("Produto Criado!");
-        return http.post("produtos", { ...value });
-      }
-      if (action === "edit") {
-        alert("Produto Editado!");
-        return http.put(`produtos/${id}`, { ...value });
+      try {
+        if (action === "delete") {
+          const deletar = confirm(`deseja deletar o produto ${value?.nome}`);
+          if (deletar) return http.delete(`produtos/${id}`);
+        }
+        if (action === "new") {
+          http.post("produtos", { ...value });
+          alert("Produto Criado!");
+        }
+        if (action === "edit") {
+          http.put(`produtos/${id}`, { ...value });
+          alert("Produto Editado!");
+        }
+      } catch (error) {
+        if (action === "new") alert("Erro ao criar");
+        if (action === "delete") alert("Erro ao deletar");
+        if (action === "edit") alert("Erro ao editar");
+        console.error((error as Error).message);
       }
     },
 

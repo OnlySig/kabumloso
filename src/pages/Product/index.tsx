@@ -86,7 +86,7 @@ const Product = () => {
         <TitleIcon title="Outras opções">
           <TbTargetArrow style={iconProps} />
         </TitleIcon>
-        <div className="flex flex-wrap justify-between gap-3 max-sm:justify-center mt-4">
+        <div className="flex flex-wrap justify-between max-sm:justify-center mt-4">
           {produtosAleatorios.map((produto, index) => (
             <Card {...produto} key={index} />
           ))}

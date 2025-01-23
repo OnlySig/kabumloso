@@ -7,11 +7,16 @@ import SearchLayout from "../pages/Search/SearchLayout";
 import LayoutAdmin from "../pages/admin/LayoutAdmin";
 import Dashboard from "../pages/admin/Dashboard";
 import UpsertForm from "../pages/admin/UpsertForm";
+import NotFound from "../pages/not-found";
+import LayoutAccount from "../pages/account/LayoutAccount";
+import CreateAccount from "../pages/account/CreateAccount";
+import Login from "../pages/account/Login";
 
 export const routes = createBrowserRouter([
   {
     path: "/",
     element: <LayoutBase />,
+    errorElement: <NotFound />,
     children: [
       {
         index: true,
@@ -52,6 +57,20 @@ export const routes = createBrowserRouter([
       {
         path: "upsert",
         element: <UpsertForm />,
+      },
+    ],
+  },
+  {
+    path: "account",
+    element: <LayoutAccount />,
+    children: [
+      {
+        path: "create-account",
+        element: <CreateAccount />,
+      },
+      {
+        path: "login",
+        element: <Login />,
       },
     ],
   },
