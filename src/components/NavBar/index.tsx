@@ -35,7 +35,7 @@ const NavBar = () => {
       <div className="bg-primarycolor500">
         <div className="w-full flex items-center justify-between px-10 max-sm:px-0 2xl:px-0 py-8 max-w-[1490px] mx-auto mb-5">
           <Link to={"/"}>
-            <h1 className="text-white">Kabumloso</h1>
+            <h1 className="text-white uppercase">Kabumloso</h1>
           </Link>
           <Input
             isSearch
