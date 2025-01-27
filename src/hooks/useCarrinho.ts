@@ -26,5 +26,5 @@ export const useCarrinhoPreco = () => {
     ?.reduce((acc: number, currentValue: number) => {
       return acc + currentValue;
     }, 0);
-  return ConvertedCurrent(preco);
+  return ConvertedCurrent(Number(preco));
 };

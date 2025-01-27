@@ -21,15 +21,17 @@ const Product = () => {
   const { data, isLoading } = useUmProduto(slug ?? "smartphone-xyz");
   const produtosAleatorios = useProdutosRandom();
   if (!data) return "deu ruim";
-  const precoTotal = ConvertedCurrent(data.preco);
-  const precoParcela10x = ConvertedCurrent(data.preco / 10);
+  const precoTotal = ConvertedCurrent(Number(data.preco));
+  const precoParcela10x = ConvertedCurrent(Number(data.preco / 10));
   return isLoading ? (
     <Spinner />
   ) : (
     <div className="p-10 max-sm:px-0 2xl:px-0">
       <div className="flex mb-10 max-md:flex-col max-md:items-center bg-white p-5 rounded-2xl">
         <div className="flex-grow md:w-1/2">
-          <h2 className="font-bold mb-4">{data.nome}</h2>
+          <h2 data-testid="titleTest" className="font-bold mb-4">
+            {data.nome}
+          </h2>
           <img
             className="w-[412px] mx-auto"
             src={data.imagem}

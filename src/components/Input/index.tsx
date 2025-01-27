@@ -68,6 +68,7 @@ const Input = <T extends string | number>({
           }
         }}
         min={0}
+        step={id === "preco" ? "0.01" : "0"}
       />
       {addBtn && (
         <button onClick={onClick} className="bg-white px-1 rounded-e-lg">

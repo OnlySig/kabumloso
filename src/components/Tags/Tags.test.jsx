@@ -5,7 +5,7 @@ import { renderWithQueryClient } from "../../test-utils";
 jest.mock("../../hooks/useProdutos", () => ({
   useProdutosCategorias: jest.fn(),
 }));
-describe("Testes do componente Tags", () => {
+describe("Deve renderizar o componente Tags", () => {
   it("Deve mostrar a quantidade certa de tags", () => {
     // Mock do hook para retornar 10 categorias
     const mockCategorias = Array.from(
@@ -24,7 +24,7 @@ describe("Testes do componente Tags", () => {
     expect(listaDeLinks).toHaveLength(10);
   });
 
-  it("Não deve renderizar o link para extrato", () => {
+  it("E os estilos devem ser controlados pela prop toggle", () => {
     const tags = [
       "Eletrônicos",
       "Notebooks",
@@ -38,17 +38,19 @@ describe("Testes do componente Tags", () => {
       "Redes",
     ];
     const { useProdutosCategorias } = require("../../hooks/useProdutos");
-
     useProdutosCategorias.mockReturnValue(tags);
 
     renderWithQueryClient(
       <Tags toggleDepartamento={true} setToggleDepartamento={jest.fn()} />
     );
 
-    const listaDeLinks = screen.getAllByRole("link");
-    const nomesDasTags = listaDeLinks.map((link) => link.textContent);
-    console.log(nomesDasTags);
+    const tagsContainer = screen.getByTestId("containerList");
+    expect(tagsContainer).toHaveClass("max-w-[1490px] relative");
 
-    expect(nomesDasTags).toEqual(tags);
+    renderWithQueryClient(
+      <Tags toggleDepartamento={false} setToggleDepartamento={jest.fn()} />
+    );
+    const tagsContainer2 = screen.queryAllByTestId("containerList");
+    expect(tagsContainer2[1]).toHaveClass("hidden");
   });
 });

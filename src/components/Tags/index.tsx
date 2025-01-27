@@ -10,7 +10,10 @@ const Tags = ({
 }) => {
   const tags = useProdutosCategorias();
   return (
-    <div className={!toggleDepartamento ? "hidden" : "max-w-[1490px] relative"}>
+    <div
+      data-testid="containerList"
+      className={!toggleDepartamento ? "hidden" : "max-w-[1490px] relative"}
+    >
       <ul className="flex flex-col flex-grow justify-between font-bold uppercase absolute z-10 w-[196px]">
         {tags?.map((tag) => (
           <Tag

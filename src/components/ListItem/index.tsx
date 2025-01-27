@@ -19,7 +19,7 @@ const ListItem = ({
   preco: number;
 }) => {
   const { mutate: updateProduto } = useProdutosMutation();
-  const precoFormatado = ConvertedCurrent(preco);
+  const precoFormatado = ConvertedCurrent(Number(preco));
   const handleClick = async () => {
     try {
       updateProduto({ id, action: "delete", value: { nome } });

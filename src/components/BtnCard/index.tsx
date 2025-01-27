@@ -22,7 +22,7 @@ const BtnCard = ({
       }`}
     >
       <FaShoppingCart
-        style={!secundaria ? { color: "#252043" } : { color: "#FFF" }}
+        style={secundaria ? { color: "#FFF" } : { color: "#252043" }}
       />
       {text ? text : "Comprar"}
     </button>

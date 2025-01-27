@@ -51,7 +51,7 @@ const Card = ({
     const opcao = (e.target as HTMLInputElement).textContent ?? "";
     updateFieldCarrinho(value, opcao);
   };
-  const precoFormatado = ConvertedCurrent(preco);
+  const precoFormatado = ConvertedCurrent(Number(preco ?? 0));
   const precoComQtdFormatado = ConvertedCurrent(preco * quantidade);
   return (
     <li
@@ -103,11 +103,18 @@ const Card = ({
           <div>
             {!inCard ? (
               <>
-                <h3 className="font-bold opacity-90 uppercase">{nome}</h3>
+                <h3
+                  className="font-bold opacity-90 uppercase"
+                  data-testid="typeNome"
+                >
+                  {nome}
+                </h3>
                 <p className="font-thin text-primarycolor400">
                   Categoria de{" "}
                   <Link to={`/search/tag/${categoria}`}>
-                    <span className="font-semibold">{categoria}</span>
+                    <span data-testid="typeCategoria" className="font-semibold">
+                      {categoria}
+                    </span>
                   </Link>
                 </p>
               </>

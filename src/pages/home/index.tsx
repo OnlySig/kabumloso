@@ -17,7 +17,7 @@ const Home = () => {
   ) : (
     <>
       <BannerHeader />
-      <section className="p-10 2xl:px-0">
+      <section className="p-10 2xl:px-0" data-testid="homeContainer">
         <TitleIcon title="Produtos recomendados">
           <IoMdStar style={iconProps} />
         </TitleIcon>

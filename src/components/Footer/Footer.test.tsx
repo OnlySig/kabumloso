@@ -1,13 +1,13 @@
 import { render, screen } from "@testing-library/react";
 import Footer from ".";
-describe("Teste do componente Footer", () => {
-  it("Deve renderizar o texto 'SIGA-ME'", () => {
+describe("Deve renderizar o componente footer", () => {
+  it("Com o texto 'SIGA-ME'", () => {
     render(<Footer />);
     const title = screen.getByText("SIGA-ME");
     expect(title).toBeInTheDocument();
   });
 
-  it("Deve renderizar três ancoras", () => {
+  it("Com três ancoras", () => {
     const mocksAnchors = [
       "https://www.instagram.com/gacastropereira/",
       "https://www.linkedin.com/in/gabriel-castro-pereira21/",

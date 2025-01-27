@@ -12,7 +12,7 @@ const Aside = () => {
     "...carregando"
   ) : (
     <aside
-      className={`flex flex-col justify-between fixed right-0 top-0 bottom-0  backdrop-blur-md shadow-2xl h-full w-96 overflow-auto ease-in duration-300 p-2 ${
+      className={`flex flex-col justify-between fixed right-0 top-0 bottom-0 z-10 backdrop-blur-md shadow-2xl h-full w-96 overflow-auto ease-in duration-300 p-2 ${
         !carrinhoAside && "translate-x-full"
       }`}
     >
@@ -25,11 +25,11 @@ const Aside = () => {
             <IoMdCloseCircle style={{ fontSize: 30, color: "#c9c7db" }} />
           </button>
         </div>
-        <div>
+        <ul>
           {carrinho.map((produto: IProdutos) => (
             <Card {...produto} key={produto.id} inCard />
           ))}
-        </div>
+        </ul>
       </div>
       <div className="bg-accentcolor500">
         <h3 className="text-primarycolor400 font-bold px-2 py-4 flex justify-between">

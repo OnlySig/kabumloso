@@ -126,7 +126,7 @@ const UpsertForm = () => {
             id="preco"
             placeholder="preço do produto"
             setValue={(e) => setPreco(e)}
-            value={preco}
+            value={Number(preco)}
             TxtContentLabel="Preço do produto"
             required
             isLabel

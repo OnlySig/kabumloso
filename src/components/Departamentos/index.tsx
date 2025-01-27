@@ -18,7 +18,7 @@ const Departamentos = ({
       className="bg-primarycolor300 hover:bg-[#504881] w-fit h-10 flex justify-start items-center text-white font-bold cursor-pointer"
     >
       <RxHamburgerMenu style={iconProps} />
-      <span>VER DEPARTAMENTOS</span>
+      <span data-testid="departamentoTitle">VER DEPARTAMENTOS</span>
     </div>
   );
 };
